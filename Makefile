@@ -1,3 +1,4 @@
+# Modify NAMESPACE, NAME, and VERSION for your project
 NAMESPACE = datawire
 NAME = bakerstreet-hello
 VERSION = 1

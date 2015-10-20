@@ -5,8 +5,7 @@ A reusable template for creating Baker Street enabled Docker containers for your
 ## Requirements ##
 
 1. [Docker](https://docker.com) is installed.
-2. The datawire-directory is running somewhere that is routable from a Docker container, for example, the Docker host 
-machine.
+2. [GNU Make](https://www.gnu.org/software/make/) is installed. 
 
 ## Getting Started ##
 
@@ -16,16 +15,37 @@ The project is setup with the expectation that developers will modify or replace
 ultimately beyond experimentation will commit the project and subsequent changes to their own VCS repository.
 
 2. Open the Makefile and edit the top handful of lines:
-
-NAMESPACE = Your Docker namespace.
-NAME = The name of the image in the namespace.
-VERSION = The version of your image.
-
+    
+    ```
+    NAMESPACE = Your Docker image namespace.
+    NAME = The name of the image in the namespace.
+    VERSION = The version of your image.
+    ```
+    
 3. To build your container: `make build`
 
 4. To test your container: `make test`
 
 5. To tag your version as the latest: `tag_latest`
+
+## Configuration ##
+
+The container build can be configured in a number of ways:
+
+### Your Service ###
+
+Most importantly is building the image with your service:
+
+1. Remove image/hello.py.
+2. Copy your service distribution into image.
+3. Rename image/service/hello.sh to something more appropriate.
+4. Modify the contents of the file that was image/service/hello.sh to launch your service on startup.
+5. Modify image/Dockerfile to copy the appropriate files under the "Customize" section (see the inline comments).
+
+### Configuring Datawire Repository ###
+
+It is possible to select whether to run from Staging or Stable Datawire repositories by editing the variable 
+DATAWIRE_REPOSITORY in image/buildconfig
 
 ## Usage Theory / Purpose ##
 
@@ -41,9 +61,7 @@ copy necessary service files into the appropriate locations before building the 
 
 ## Container Information ##
 
-The Docker image is assembled using the Phusion baseimage-docker project as a base template and therefore is based on
-Ubuntu 14. We may eventually replace the Phusion baseimage or provide an alternative CentOS template.
+The Docker image is assembled using the excellent Phusion baseimage-docker project as a base template and therefore is 
+based on Ubuntu 14. We may eventually replace the Phusion baseimage or provide an alternative CentOS template.
 
 Read more about Phusion baseimage here: (http://phusion.github.io/baseimage-docker/)
-
-## FAQ ##
