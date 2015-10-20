@@ -12,4 +12,4 @@ function minimal_apt_get_install()
 # ------------------------------------------------------------------------------
 # Datawire Configuration
 
-DATAWIRE_REPOSITORY=staging
+DATAWIRE_REPOSITORY=stable

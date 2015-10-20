@@ -17,8 +17,7 @@ ultimately beyond experimentation will commit the project and subsequent changes
 2. Open the Makefile and edit the top handful of lines:
     
     ```
-    NAMESPACE = Your Docker image namespace.
-    NAME = The name of the image in the namespace.
+    NAME = The name of the image. Should be the fully-qualified repository name.
     VERSION = The version of your image.
     ```
     

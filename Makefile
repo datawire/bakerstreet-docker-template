@@ -1,6 +1,5 @@
 # Modify NAMESPACE, NAME, and VERSION for your project
-NAMESPACE = datawire
-NAME = bakerstreet-hello
+NAME = quay.io/datawire/bakerstreet-hello
 VERSION = 1
 
 .PHONY: all build test tag_latest
