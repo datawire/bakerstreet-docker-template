@@ -2,7 +2,7 @@
 
 """bakerconf
 
-A tool for configuring bakerstreet when running and starting on a Docker container.
+A tool for configuring bakerstreet when running and starting on a container engine.
 
 Usage:
   bakerconf (docker)

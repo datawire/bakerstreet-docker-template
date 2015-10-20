@@ -23,6 +23,7 @@ app = Flask(__name__)
 
 index = 0
 service_id = uuid.uuid4()
+version = "1"
 
 def synchronized(func):
     func.__lock__ = threading.Lock()
@@ -41,7 +42,7 @@ def increment_index():
 @app.route("/")
 def hello():
     increment_index()
-    return jsonify(service_id=str(service_id), index=index, message="Hello, world!", version="1.0")
+    return jsonify(service_id=str(service_id), index=index, message="Hello, world!", version=version)
 
 @app.route("/health")
 def health_check():
@@ -50,5 +51,5 @@ def health_check():
 
 if __name__ == "__main__":
     passed_args = sys.argv
+    version = passed_args[2]
     app.run(port=int(passed_args[1]), host="0.0.0.0")
- 
