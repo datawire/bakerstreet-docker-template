@@ -11,8 +11,8 @@ A reusable template for creating Baker Street enabled Docker containers for your
 
 1. Clone or fork this repository.
 
-The project is setup with the expectation that developers will modify or replace certain files within the project and
-ultimately beyond experimentation will commit the project and subsequent changes to their own VCS repository.
+The project is set up with the expectation that developers will modify or replace certain files within the project as they experiment, and
+ultimately they will commit the project with subsequent changes to their own VCS repository.
 
 2. Open the Makefile and edit the top handful of lines:
     
@@ -33,7 +33,7 @@ The container build can be configured in a number of ways:
 
 ### Your Service ###
 
-Most importantly is building the image with your service:
+The most important step is to build the image with your service:
 
 1. Remove image/hello.py.
 2. Copy your service distribution into image.
@@ -53,7 +53,7 @@ For a single experimenting developer it should be sufficient to clone this proje
 files so that they can push a Docker image with their service installed on the image alongside Watson and Sherlock.
 
 ### Development Team / DevOps ###
-For a team of developers that expect to use this template in production we expect the template will be stored in an
+For a team of developers that expect to use this template in production, we expect the template will be stored in an
 organization controlled VCS (Git, Mercurial, Subversion, etc.) repository. Configuration files will be placed in the 
 appropriate places and versioned. A Continuous Integration server such as Jenkins will then clone this project and 
 copy necessary service files into the appropriate locations before building the image with Docker.
